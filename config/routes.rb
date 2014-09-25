@@ -2,7 +2,14 @@ Incluirsalud::Application.routes.draw do
   get "users/new"
 
   devise_for :users
-  resources :afiliados
+  resources :afiliados do
+    get :actualizar , :on => :collection
+  end
+  devise_scope :user do
+    delete "/logout" => "devise/sessions#destroy"
+  end
+  
+  resources :ordenes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

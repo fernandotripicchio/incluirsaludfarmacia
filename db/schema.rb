@@ -11,15 +11,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140923213434) do
+ActiveRecord::Schema.define(:version => 20140925153222) do
 
   create_table "afiliados", :force => true do |t|
     t.string   "apellido_nombre"
     t.string   "tipo_documento"
-    t.string   "string"
     t.string   "documento"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "dialises", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "medicamentos", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "medicos", :force => true do |t|
+    t.string   "nombre_apellido"
+    t.string   "especialidad"
+    t.string   "documento"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "ordenes", :force => true do |t|
+    t.integer  "afiliado_id",                :null => false
+    t.integer  "medico_id",                  :null => false
+    t.integer  "cantidad",    :default => 0, :null => false
+    t.integer  "estado"
+    t.datetime "fecha"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "stocks", :force => true do |t|
+    t.integer  "afiliado_id"
+    t.integer  "medicamento_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -1,3 +1,20 @@
-<div>
-	
+<div id="listado_afiliados">
+ <table class="listado">
+   <tr>
+   	 <th> Id </th>
+   	 <th> Apellido Nombre </th>
+   	 <th> Documento </th>
+   	 <th></th>
+   	 <th></th>
+   </tr>	
+  <% @afiliados.each do |afiliado| %>
+    <tr>
+      <td><%= afiliado.id %></td>
+      <td><%= afiliado.apellido_nombre %></td>
+      <td><%= afiliado.documento %></td>
+      <td><%= link_to 'Editar', edit_afiliado_path(afiliado) , :class => "btn btn-primary"%></td>
+      <td><%= link_to 'Mostrar', afiliado_path(afiliado) , :class => "btn btn-primary"%></td>
+    </tr>
+  <% end %>
+ </table>
 </div>
