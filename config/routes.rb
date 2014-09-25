@@ -2,7 +2,7 @@ Incluirsalud::Application.routes.draw do
   get "users/new"
 
   devise_for :users
-  resources :users
+  resources :afiliados
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

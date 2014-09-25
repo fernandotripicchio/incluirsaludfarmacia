@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140908132725) do
+ActiveRecord::Schema.define(:version => 20140923213434) do
+
+  create_table "afiliados", :force => true do |t|
+    t.string   "apellido_nombre"
+    t.string   "tipo_documento"
+    t.string   "string"
+    t.string   "documento"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
