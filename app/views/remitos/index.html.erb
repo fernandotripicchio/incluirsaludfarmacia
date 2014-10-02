@@ -1,0 +1,21 @@
+<h1>Listing remitos</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @remitos.each do |remito| %>
+  <tr>
+    <td><%= link_to 'Show', remito %></td>
+    <td><%= link_to 'Edit', edit_remito_path(remito) %></td>
+    <td><%= link_to 'Destroy', remito, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Remito', new_remito_path %>

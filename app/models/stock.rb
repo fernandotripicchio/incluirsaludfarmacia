@@ -1,7 +1,5 @@
 class Stock < ActiveRecord::Base
-  belongs_to :afiliado
-  belongs_to :medicamento
-  belongs_to :user
+  attr_accessible :cantidad, :lote, :medicamento_id, :proveedor_id
   
-  attr_accessible :afiliado_id, :medicamento_id
+  belongs_to :orden
 end

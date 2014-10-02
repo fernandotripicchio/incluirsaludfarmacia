@@ -1,4 +1,10 @@
 Incluirsalud::Application.routes.draw do
+  resources :stocks
+
+
+  resources :remitos
+
+
   get "users/new"
 
   devise_for :users
